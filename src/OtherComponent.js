@@ -1,11 +1,12 @@
-// import React, { useContext } from 'react'
-// import { NameContext } from './App.js'
+import React from 'react'
+import { useName } from './NameContext.js'
 
-function OtherComponent(props) {
+function OtherComponent() {
+    const nameContext = useName()
     return (
         <div>
-            <h2>{props.num}</h2>
-            <button onClick={() => props.incrementBy1()}>Click here</button>
+            <h2>{nameContext.name}</h2>
+            <button onClick={nameContext.setNewName}>Click here!</button>
         </div>
     )
 }
